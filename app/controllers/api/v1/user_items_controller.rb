@@ -1,4 +1,4 @@
-class Api::V1::ItemsController < ApplicationController
+class Api::V1::UserItemsController < ApplicationController
 
     def index
         @user = User.find(params[:user_id])
