@@ -19,9 +19,13 @@ class Api::V1::ItemsController < ApplicationController
         render json: @item
     end
 
-    def destroy
+    def update
         @item = Item.find(params[:id])
-        @item.destroy
+        if @item.update(item_params)
+            render json: @item
+        else
+            render json: {error: 'Item could not be updated.'}
+        end
     end
 
     private
