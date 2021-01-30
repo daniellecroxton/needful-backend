@@ -11,7 +11,7 @@ class Api::V1::UserItemsController < ApplicationController
     def create
         @item = @user.items.new(item_params)
             if @item.save
-                render json: @item
+                render json: @user
             else
                 render json: {error: 'Item could not be saved.'}
             end
